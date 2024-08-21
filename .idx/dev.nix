@@ -17,7 +17,6 @@
       "rangav.vscode-thunder-client"
       "redhat.fabric8-analytics"
       "redhat.java"
-      "vscjava.vscode-java-debug"
       "vscjava.vscode-java-dependency"
       "vscjava.vscode-java-test"
       "vscjava.vscode-maven"

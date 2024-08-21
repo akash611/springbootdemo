@@ -1,27 +1,35 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@SpringBootApplication
+// @SpringBootApplication
 public class DemoApplication {
 
-  @Value("${NAME:World}")
-  String name;
+  // @Value("${NAME:World}")
+  // String name;
 
-  @RestController
-  class HelloworldController {
-    @GetMapping("/")
-    String hello() {
-      return "Hello " + name + "!";
-    }
-  }
+  // @RestController
+  // class HelloworldController {
+  //   @GetMapping("/")
+  //   String hello() {
+  //     return "Hello " + name + "!";
+  //   }
+  // }
 
+  @SuppressWarnings("resource")
   public static void main(String[] args) {
-    SpringApplication.run(DemoApplication.class, args);
+    // SpringApplication.run(DemoApplication.class, args);
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+    Alien obj =  context.getBean("alien", Alien.class);
+    // Alien obj2 = (Alien) context.getBean("alien");
+    // obj.setAge(25);
+    // System.out.println(obj2.getAge());
+    obj.code();
+    // obj2.code();
+    // Desktop desk = context.getBean(Desktop.class);
+    // desk.compile();
+
   }
 
 }
